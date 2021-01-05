@@ -1,0 +1,15 @@
+.NotefulApp{
+    display: flex;
+    padding: 30px 30px 30px 30px;
+    
+}
+
+.flex-one{
+    flex: 1;
+    background-color: rgb(55, 226, 169);
+}
+
+.flex-three{
+    flex: 3;
+    background-color: rgb(39, 224, 209);
+}
