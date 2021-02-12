@@ -36,7 +36,7 @@ class NotefulApp extends React.Component {
     }
 
     getNoteData() {
-        fetch(`http://noteful-tanner-cason.herokuapp.com/api/note`)
+        fetch(`https://noteful-tanner-cason.herokuapp.com/api/note`)
             .then(response => {
                 if (!response.ok) {
                     throw new Error('Hey, something went wrong')

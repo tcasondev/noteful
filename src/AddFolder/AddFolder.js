@@ -6,7 +6,7 @@ class AddFolder extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            folderName: '',
+            folder_name: '',
         }
     }
 
@@ -17,10 +17,13 @@ class AddFolder extends React.Component {
 
         const { addFolder } = this.context;
 
-        fetch('http://noteful-tanner-cason.herokuapp.com/api/folder', {
+        fetch('https://noteful-tanner-cason.herokuapp.com/api/folder', {
             method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ name: this.state.folderName }),
+            headers: { 
+                'Content-Type': 'application/json',
+                'Authorization': `${process.env.API_TOKEN}`
+            },
+            body: JSON.stringify({ name: this.state.folder_name }),
         })
             .then(response => {
                 if (!response.ok) {
@@ -30,7 +33,7 @@ class AddFolder extends React.Component {
             })
             .then(data => {
                 addFolder(data);
-                this.setState({ folderName: '' })
+                this.setState({ folder_name: '' })
                 this.props.history.goBack();
             })
             .catch(err => {
@@ -39,7 +42,7 @@ class AddFolder extends React.Component {
     }
 
     updateFolderName(newFolderName) {
-        this.setState({ folderName: newFolderName })
+        this.setState({ folder_name: newFolderName })
     }
 
     render() {
@@ -55,7 +58,7 @@ class AddFolder extends React.Component {
                             onChange={e => this.updateFolderName(e.target.value)} />
                         <br></br>
                         <button type='submit'
-                            disabled={!(this.state.folderName.length > 0)}>
+                            disabled={!(this.state.folder_name.length > 0)}>
                             Create New Folder!
                         </button>
                     </fieldset>
