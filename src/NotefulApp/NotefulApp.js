@@ -18,7 +18,7 @@ class NotefulApp extends React.Component {
     }
 
     getFolderData() {
-        fetch(`http://localhost:9090/folders`)
+        fetch(`http://noteful-tanner-cason.herokuapp.com/folders`)
             .then(response => {
                 if (!response.ok) {
                     throw new Error('Hey, something went wrong')

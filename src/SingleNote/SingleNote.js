@@ -13,7 +13,7 @@ class SingleNote extends React.Component {
     deleteButton = (e) => {
         e.stopPropagation();
         const { deleteItem } = this.context;
-        fetch(`http://localhost:9090/notes/${this.props.id}`, {
+        fetch(`http://noteful-tanner-cason.herokuapp.com/notes/${this.props.id}`, {
             method: 'DELETE',
             headers: {
                 'content-type': 'application/json'
