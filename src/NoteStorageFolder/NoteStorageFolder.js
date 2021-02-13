@@ -11,6 +11,7 @@ class NoteStorageFolder extends React.Component {
     render() {
         const { notes } = this.context;
         const filteredNotes = notes.filter(note => {
+            // eslint-disable-next-line
             return note.assigned_folder == this.props.match.params.folderId;
         })
         const notesMap = filteredNotes.map(note => {

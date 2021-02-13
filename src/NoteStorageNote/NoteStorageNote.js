@@ -16,6 +16,7 @@ class NoteStorageNote extends React.Component {
         
         const { notes } = this.context;
         const targetNote = notes.find(note => {
+            // eslint-disable-next-line
             return note.id == this.props.match.params.noteId
         }) || { id: '' }
     console.log(targetNote)
