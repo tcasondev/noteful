@@ -19,15 +19,10 @@ class Note extends React.Component {
             .then(response => {
                 if (!response.ok) {
                     throw new Error('There was an error in deletion')
-                }
-                return response.json();
+                } else { deleteItem(this.props.id); }
+                
             })
-            .then(() => {
-                deleteItem(this.props.id);
-            })
-            .catch(err => {
-                alert(err)
-            })
+            
     }
 
     render() {
@@ -54,7 +49,7 @@ class Note extends React.Component {
 
 Note.propTypes = {
     id: PropTypes
-        .string
+        .number
         .isRequired,
     modified: PropTypes
         .string

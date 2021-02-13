@@ -23,7 +23,7 @@ class SingleNote extends React.Component {
                 if (!response.ok) {
                     throw new Error('There was an error in deletion')
                 }
-                return response.json();
+                
             })
             .then(() => {
                 deleteItem(this.props.id);
@@ -57,7 +57,7 @@ class SingleNote extends React.Component {
 }
 
 SingleNote.propTypes = {
-    id: PropTypes.string,
+    id: PropTypes.number,
     modified: PropTypes.string,
     name: PropTypes.string,
     onDeleteNote: PropTypes.func

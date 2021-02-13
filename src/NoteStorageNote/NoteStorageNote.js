@@ -13,19 +13,20 @@ class NoteStorageNote extends React.Component {
     }
 
     render() {
+        
         const { notes } = this.context;
         const targetNote = notes.find(note => {
-            return note.id === this.props.match.params.noteId
+            return note.id == this.props.match.params.noteId
         }) || { id: '' }
-
+    console.log(targetNote)
         return (
             <div className='NoteStorage' >
                 <SingleNote
                     key={targetNote.id}
                     id={targetNote.id}
-                    name={targetNote.name}
-                    modified={targetNote.modified}
-                    folderId={targetNote.folderId}
+                    name={targetNote.note_name}
+                    modified={targetNote.date_modified}
+                    folderId={targetNote.assigned_folder}
                     onDeleteNote={this.handleDeleteNote}
                 />
                 <ErrorBoundary>

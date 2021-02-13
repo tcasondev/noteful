@@ -15,9 +15,9 @@ class NoteStorage extends React.Component {
                 <Note
                     key={note.id}
                     id={note.id}
-                    name={note.name}
-                    modified={note.modified}
-                    folderId={note.folderId}
+                    name={note.note_name}
+                    modified={note.date_modified}
+                    folderId={note.assigned_folder}
                     content={note.content}
                     singleNote={note}
                 />
